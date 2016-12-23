@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.test">
+
+    <application
+        android:name=".UILApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="叽咂叽咂"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".oneTableActivity">
+
+        </activity>
+        <activity android:name=".ListViewActivity">
+
+        </activity>
+        <activity android:name=".PicInfoActivity">
+
+        </activity>
+        <activity android:name=".Welcome">
+            <!--默认启动页面加此标签-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+    <!--允许访问网络权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SD卡写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 使用相机 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--检查网络是否连接权限-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+</manifest>

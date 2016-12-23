@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+    defaultConfig {
+        applicationId "com.example.test"
+        minSdkVersion 14
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/java-gen']
+        }
+    }
+    defaultConfig {
+        multiDexEnabled true
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+    compile 'de.greenrobot:greendao:1.3.7'
+    compile files('libs/json-lib-2.1-jdk15.jar')
+    compile 'com.google.code.gson:gson-parent:2.7'
+    compile 'com.google.code.gson:gson:2.7'
+    compile project(':pulltorefresh')//下拉刷新
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.+'//GIF图片显示
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.1'//网络图片加载第三方库
+    compile 'com.commit451:PhotoView:1.2.4'
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'// 配置4.4.4及以上沉浸式状态栏的库.
+    compile 'com.jakewharton:butterknife:5.1.1'//懒人库
+    compile 'com.squareup.picasso:picasso:2.3.2'//加载网络图片(不支持GIF)
+    compile 'com.github.bumptech.glide:glide:3.5.2'//谷歌提供的加载图文图片(支持GIF)
+}
