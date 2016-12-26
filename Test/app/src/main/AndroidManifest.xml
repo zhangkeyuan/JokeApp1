@@ -12,6 +12,13 @@
         <activity android:name=".MainActivity">
 
         </activity>
+        <activity android:name=".MainmenuActivity">
+            <!--默认启动页面加此标签-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".oneTableActivity">
 
         </activity>
@@ -22,11 +29,7 @@
 
         </activity>
         <activity android:name=".Welcome">
-            <!--默认启动页面加此标签-->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
     </application>
     <!--允许访问网络权限-->
